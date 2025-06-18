@@ -1,0 +1,19 @@
+{
+  "id": "employee1",
+  "name": "John Doe",
+  "email": "johndoe@example.com",
+  "jobTitle": "Software Engineer",
+  "salary": 5000,
+  "deductions": [
+    {
+      "deductionId": "deduction1",
+      "name": "Tax",
+      "amount": 1000
+    },
+    {
+      "deductionId": "deduction2",
+      "name": "Insurance",
+      "amount": 500
+    }
+  ]
+}
