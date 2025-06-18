@@ -1,5 +1,7 @@
 
 // Testing API GET method => https://a404cb5b-fc3a-46d1-a8cc-6f72f08d71db.mock.pstmn.io/employees/
+// From Collection PayrollAPI / Employees / Get an employee detail 
+
 
 pm.test("Status code is 200", () => {
     pm.response.to.have.status(200);

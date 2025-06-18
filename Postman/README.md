@@ -4,8 +4,10 @@ This repo contains test scripts for API endpoints using Postman.
 
 ## Structure
 
-- `Postman/` — Contains Postman test scripts and collections  
-- `.venv/` — Local virtual environment (excluded from GitHub)
+- `Postman/` - Contains Postman test scripts and collections
+- `employee_api_test.js` - Postman test script (JavaScript)
+- `response` - Postman API response sample
+- `.venv/` - Local virtual environment (excluded from GitHub)
 
 ## Getting Started
 
