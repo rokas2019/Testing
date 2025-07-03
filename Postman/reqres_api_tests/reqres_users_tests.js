@@ -1,4 +1,211 @@
-
+const expectedSchema = 
+    {
+  "type": "object",
+  "properties": {
+    "page": {
+      "type": "integer"
+    },
+    "per_page": {
+      "type": "integer"
+    },
+    "total": {
+      "type": "integer"
+    },
+    "total_pages": {
+      "type": "integer"
+    },
+    "data": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "email": {
+              "type": "string"
+            },
+            "first_name": {
+              "type": "string"
+            },
+            "last_name": {
+              "type": "string"
+            },
+            "avatar": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "email",
+            "first_name",
+            "last_name",
+            "avatar"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "email": {
+              "type": "string"
+            },
+            "first_name": {
+              "type": "string"
+            },
+            "last_name": {
+              "type": "string"
+            },
+            "avatar": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "email",
+            "first_name",
+            "last_name",
+            "avatar"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "email": {
+              "type": "string"
+            },
+            "first_name": {
+              "type": "string"
+            },
+            "last_name": {
+              "type": "string"
+            },
+            "avatar": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "email",
+            "first_name",
+            "last_name",
+            "avatar"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "email": {
+              "type": "string"
+            },
+            "first_name": {
+              "type": "string"
+            },
+            "last_name": {
+              "type": "string"
+            },
+            "avatar": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "email",
+            "first_name",
+            "last_name",
+            "avatar"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "email": {
+              "type": "string"
+            },
+            "first_name": {
+              "type": "string"
+            },
+            "last_name": {
+              "type": "string"
+            },
+            "avatar": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "email",
+            "first_name",
+            "last_name",
+            "avatar"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "email": {
+              "type": "string"
+            },
+            "first_name": {
+              "type": "string"
+            },
+            "last_name": {
+              "type": "string"
+            },
+            "avatar": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "email",
+            "first_name",
+            "last_name",
+            "avatar"
+          ]
+        }
+      ]
+    },
+    "support": {
+      "type": "object",
+      "properties": {
+        "url": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "url",
+        "text"
+      ]
+    }
+  },
+  "required": [
+    "page",
+    "per_page",
+    "total",
+    "total_pages",
+    "data",
+    "support"
+  ]
+}
 const responseBody = pm.response.json();
 
 pm.test("Status code is 200", function () {
@@ -65,6 +272,9 @@ pm.test("Verify the data returned is as expected", function () {
     pm.expect(responseBody.support.url).to.equal("https://contentcaddy.io?utm_source=reqres&utm_medium=json&utm_campaign=referral");
     pm.expect(responseBody.support.text).to.equal("Tired of writing endless social media content? Let Content Caddy generate it for you.");
 })
-
+// Verify JSON schema
+pm.test("response matches JSON schema", () => {
+    pm.response.to.have.jsonSchema(expectedSchema);
+}) 
 
 
